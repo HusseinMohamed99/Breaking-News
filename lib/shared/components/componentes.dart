@@ -168,11 +168,10 @@ Widget myDivider() => Padding(
 
 Widget articleBuilder(list, context, {isSearch = false}) => ConditionalBuilder(
       condition: list.length > 0,
-      builder: (context) => ListView.separated(
+      builder: (context) => ListView.builder(
         physics: BouncingScrollPhysics(),
         itemBuilder: (context, index) => buildArticleItem(list[index], context),
-        separatorBuilder: (context, index) => myDivider(),
-        itemCount: 10,
+        itemCount: list.length,
       ),
       fallback: (context) =>
           isSearch ? Container() : Center(child: CircularProgressIndicator()),
