@@ -1,4 +1,3 @@
-// ignore_for_file: use_key_in_widget_constructors, prefer_const_constructors_in_immutables
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -12,7 +11,7 @@ import 'shared/network/local/cache_helper.dart';
 import 'shared/network/remote/dio_helper.dart';
 
 void main() async {
-  // بيتأكد ان كل حاجة خلصت و بعدين يرن
+
   WidgetsFlutterBinding.ensureInitialized();
 
   BlocOverrides.runZoned(
@@ -27,9 +26,7 @@ void main() async {
   runApp(MyApp(isDark: isDark));
 }
 
-// Stateless
-// Stateful
-// class MyApp
+
 
 class MyApp extends StatelessWidget {
   final bool? isDark;
@@ -38,8 +35,7 @@ class MyApp extends StatelessWidget {
     this.isDark,
   });
 
-  // constructor
-  // build
+
 
   @override
   Widget build(BuildContext context) {
