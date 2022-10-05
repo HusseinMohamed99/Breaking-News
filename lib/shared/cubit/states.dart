@@ -35,6 +35,46 @@ class NewsGetScienceErrorState extends NewsStates
   NewsGetScienceErrorState(this.error);
 }
 
+class NewsGetTechnologySuccessState extends NewsStates {}
+
+class NewsGetTechnologyLoadingState extends NewsStates {}
+
+class NewsGetTechnologyErrorState extends NewsStates
+{
+  final String error;
+  NewsGetTechnologyErrorState(this.error);
+}
+
+class NewsGetHealthSuccessState extends NewsStates {}
+
+class NewsGetHealthLoadingState extends NewsStates {}
+
+class NewsGetHealthErrorState extends NewsStates
+{
+  final String error;
+  NewsGetHealthErrorState(this.error);
+}
+
+class NewsGetEntertainmentSuccessState extends NewsStates {}
+
+class NewsGetEntertainmentLoadingState extends NewsStates {}
+
+class NewsGetEntertainmentErrorState extends NewsStates
+{
+  final String error;
+  NewsGetEntertainmentErrorState(this.error);
+}
+
+class NewsGetGeneralSuccessState extends NewsStates {}
+
+class NewsGetGeneralLoadingState extends NewsStates {}
+
+class NewsGetGeneralErrorState extends NewsStates
+{
+  final String error;
+  NewsGetGeneralErrorState(this.error);
+}
+
 
 class NewsGetSearchSuccessState extends NewsStates {}
 

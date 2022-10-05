@@ -162,16 +162,17 @@ Widget myDivider() => Padding(
       child: Container(
         width: double.infinity,
         height: 1.0,
-        color: Colors.grey[300],
+        color: Colors.green,
       ),
     );
 
 Widget articleBuilder(list, context, {isSearch = false}) => ConditionalBuilder(
       condition: list.length > 0,
-      builder: (context) => ListView.builder(
+      builder: (context) => ListView.separated(
         physics: BouncingScrollPhysics(),
         itemBuilder: (context, index) => buildArticleItem(list[index], context),
         itemCount: list.length,
+        separatorBuilder: (context, index) => myDivider(),
       ),
       fallback: (context) =>
           isSearch ? Container() : Center(child: CircularProgressIndicator()),

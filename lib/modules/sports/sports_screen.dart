@@ -24,5 +24,4 @@ class _Sports_ScreenState extends State<Sports_Screen> {
     );
   }
 }
-// s 19-20
-//
+
