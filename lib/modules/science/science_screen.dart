@@ -5,7 +5,10 @@ import 'package:news/shared/components/componentes.dart';
 import 'package:news/shared/cubit/cubit.dart';
 import 'package:news/shared/cubit/states.dart';
 
+
 class ScienceScreen extends StatelessWidget {
+  const ScienceScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return BlocConsumer<NewsCubit, NewsStates>(

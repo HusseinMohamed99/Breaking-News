@@ -1,5 +1,5 @@
-// ignore_for_file: sized_box_for_whitespace, prefer_const_constructors, non_constant_identifier_names, avoid_types_as_parameter_names, sort_child_properties_last
 
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:conditional_builder_null_safety/conditional_builder_null_safety.dart';
 import 'package:flutter/material.dart';
 import 'package:news/modules/web_view/web_view.dart';
@@ -15,6 +15,12 @@ Widget defaultButton({
     Container(
       width: width,
       height: 50.0,
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(
+          radius,
+        ),
+        color: background,
+      ),
       child: MaterialButton(
         onPressed: () {
           function();
@@ -26,12 +32,6 @@ Widget defaultButton({
             fontSize: 20.0,
           ),
         ),
-      ),
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(
-          radius,
-        ),
-        color: background,
       ),
     );
 
@@ -80,7 +80,7 @@ Widget defaultTextFormField({
       },
       decoration: InputDecoration(
         labelText: label,
-        labelStyle: TextStyle(color: Colors.white),
+        labelStyle: const TextStyle(color: Colors.white),
         prefixIcon: Icon(
           prefix,
           color: Colors.black,
@@ -111,23 +111,29 @@ Widget buildArticleItem(article, context) => InkWell(
         child: Row(
           children: [
             Container(
+
               width: 120.0,
               height: 120.0,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(
                   10.0,
                 ),
-                image: DecorationImage(
-                  image: NetworkImage('${article['urlToImage']}'),
-                  fit: BoxFit.cover,
-                ),
+              ),
+              child:   CachedNetworkImage(
+                imageUrl: '${article['urlToImage']}',
+                fit: BoxFit.fill,
+                height: 200,
+                width: double.infinity,
+                progressIndicatorBuilder: (context, url, downloadProgress) =>
+                const Center(child: CircularProgressIndicator()),
+                errorWidget: (context, url, error) => const Icon(Icons.error,color: Colors.grey,size: 60,),
               ),
             ),
-            SizedBox(
+            const SizedBox(
               width: 20.0,
             ),
             Expanded(
-              child: Container(
+              child: SizedBox(
                 height: 120.0,
                 child: Column(
                   mainAxisSize: MainAxisSize.min,
@@ -144,7 +150,7 @@ Widget buildArticleItem(article, context) => InkWell(
                     ),
                     Text(
                       '${article['publishedAt']}',
-                      style: TextStyle(
+                      style: const TextStyle(
                         color: Colors.grey,
                       ),
                     ),
@@ -169,18 +175,18 @@ Widget myDivider() => Padding(
 Widget articleBuilder(list, context, {isSearch = false}) => ConditionalBuilder(
       condition: list.length > 0,
       builder: (context) => ListView.separated(
-        physics: BouncingScrollPhysics(),
+        physics: const BouncingScrollPhysics(),
         itemBuilder: (context, index) => buildArticleItem(list[index], context),
         itemCount: list.length,
         separatorBuilder: (context, index) => myDivider(),
       ),
       fallback: (context) =>
-          isSearch ? Container() : Center(child: CircularProgressIndicator()),
+          isSearch ? Container() : const Center(child: CircularProgressIndicator()),
     );
 
-void navigateTo(context, Widget) => Navigator.push(
+void navigateTo(context, widget) => Navigator.push(
       context,
       MaterialPageRoute(
-        builder: (context) => Widget,
+        builder: (context) => widget,
       ),
     );

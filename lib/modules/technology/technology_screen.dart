@@ -8,6 +8,7 @@ class TechnologyScreen extends StatelessWidget {
 
   const TechnologyScreen({Key? key}) : super(key: key);
 
+  @override
   Widget build(BuildContext context) {
     return BlocConsumer<NewsCubit, NewsStates>(
       listener: (context, state) {},

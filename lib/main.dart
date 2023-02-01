@@ -33,7 +33,7 @@ void main() async {
 class MyApp extends StatelessWidget {
   final bool? isDark;
 
-  MyApp({
+  const MyApp({super.key,
     this.isDark,
   });
 
@@ -74,7 +74,7 @@ class MyApp extends StatelessWidget {
               duration: 3500,
               pageRouteTransition: PageRouteTransition.SlideTransition,
               navigateRoute: News_Screen(),
-              text: 'Breaking News 🎤️🗞️',
+              text: 'Breaking News🗞️',
               textType: TextType.ColorizeAnimationText,
               textStyle: GoogleFonts.libreBaskerville(
                   fontSize: 40,
@@ -86,7 +86,7 @@ class MyApp extends StatelessWidget {
                     : Colors.black ,
                 Colors.green,
                 Colors.green,
-                Color(0xff04043A),
+                const Color(0xff04043A),
               ],
               backgroundColor: ModeCubit.get(context).isDark
                   ? const Color(0xff04043A)

@@ -8,7 +8,7 @@ import '../../shared/cubit/states.dart';
 class GeneralScreen extends StatelessWidget {
   const GeneralScreen({Key? key}) : super(key: key);
 
-
+@override
   Widget build(BuildContext context) {
     return BlocConsumer<NewsCubit, NewsStates>(
       listener: (context, state) {},

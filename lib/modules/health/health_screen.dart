@@ -9,6 +9,7 @@ class HealthScreen extends StatelessWidget {
 
   const HealthScreen({Key? key}) : super(key: key);
 
+  @override
   Widget build(BuildContext context) {
     return BlocConsumer<NewsCubit, NewsStates>(
       listener: (context, state) {},

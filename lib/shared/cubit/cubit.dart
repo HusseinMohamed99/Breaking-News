@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:news/modules/business/business_screen.dart';
@@ -18,51 +17,51 @@ class NewsCubit extends Cubit<NewsStates> {
 
   int currentIndex = 0;
 
-  List<BottomNavigationBarItem> BottomItems = [
-    BottomNavigationBarItem(
+  List<BottomNavigationBarItem> bottomItems = [
+    const BottomNavigationBarItem(
         icon: Icon(
           Icons.home_outlined,
         ),
         label: 'General'),
-    BottomNavigationBarItem(
+    const BottomNavigationBarItem(
         icon: Icon(
           Icons.sports_basketball_sharp,
         ),
         label: 'Sports'),
-    BottomNavigationBarItem(
+    const BottomNavigationBarItem(
         icon: Icon(
           Icons.business,
         ),
         label: 'Business'),
-    BottomNavigationBarItem(
+    const BottomNavigationBarItem(
         icon: Icon(
           Icons.science_outlined,
         ),
         label: 'Science'),
-    BottomNavigationBarItem(
+    const BottomNavigationBarItem(
         icon: Icon(
           Icons.laptop,
         ),
         label: 'Technology'),
-    BottomNavigationBarItem(
+    const BottomNavigationBarItem(
         icon: Icon(
           Icons.health_and_safety_outlined,
         ),
         label: 'Health'),
-    BottomNavigationBarItem(
+    const BottomNavigationBarItem(
         icon: Icon(
           Icons.games_outlined,
         ),
         label: 'Entertainment'),
   ];
   List<Widget> screens = [
-    GeneralScreen(),
-    Sports_Screen(),
-    BusinessScreen(),
-    ScienceScreen(),
-    TechnologyScreen(),
-    HealthScreen(),
-    EntertainmentScreen(),
+    const GeneralScreen(),
+    const SportsScreen(),
+    const BusinessScreen(),
+    const ScienceScreen(),
+    const TechnologyScreen(),
+    const HealthScreen(),
+    const EntertainmentScreen(),
 
   ];
 
@@ -78,6 +77,8 @@ class NewsCubit extends Cubit<NewsStates> {
     emit(NewsBottomNavState());
   }
 
+  static const String apiKey = '80d9b883bfba4836b95b0f77f41d5d07';
+
   List<dynamic> general = [];
 
   void getGeneral() {
@@ -88,15 +89,15 @@ class NewsCubit extends Cubit<NewsStates> {
         query: {
           'country': 'eg',
           'category': 'general',
-          'apiKey': '0803a9972d064bd8b3b7379123ea164c',
+          'apiKey': apiKey,
         },
       ).then((value) {
         general = value.data['articles'];
         debugPrint(general[0]['title']);
         emit(NewsGetGeneralSuccessState());
-      }).catchError((Error) {
-        debugPrint(Error.toString());
-        emit(NewsGetGeneralErrorState(Error.toString()));
+      }).catchError((error) {
+        debugPrint(error.toString());
+        emit(NewsGetGeneralErrorState(error.toString()));
       });
     } else {
       emit(NewsGetGeneralSuccessState());
@@ -112,15 +113,15 @@ class NewsCubit extends Cubit<NewsStates> {
       query: {
         'country': 'eg',
         'category': 'sports',
-        'apiKey': '0803a9972d064bd8b3b7379123ea164c',
+        'apiKey': apiKey,
       },
     ).then((value) {
       sports = value.data['articles'];
       debugPrint(sports[0]['title']);
       emit(NewsGetSportsSuccessState());
-    }).catchError((Error) {
-      debugPrint(Error.toString());
-      emit(NewsGetSportsErrorState(Error.toString()));
+    }).catchError((error) {
+      debugPrint(error.toString());
+      emit(NewsGetSportsErrorState(error.toString()));
     });
   }
 
@@ -134,15 +135,15 @@ class NewsCubit extends Cubit<NewsStates> {
         query: {
           'country': 'eg',
           'category': 'business',
-          'apiKey': '0803a9972d064bd8b3b7379123ea164c',
+          'apiKey': apiKey,
         },
       ).then((value) {
         business = value.data['articles'];
         debugPrint(business[0]['title']);
         emit(NewsGetBusinessSuccessState());
-      }).catchError((Error) {
-        debugPrint(Error.toString());
-        emit(NewsGetBusinessErrorState(Error.toString()));
+      }).catchError((error) {
+        debugPrint(error.toString());
+        emit(NewsGetBusinessErrorState(error.toString()));
       });
     } else {
       emit(NewsGetBusinessSuccessState());
@@ -159,15 +160,15 @@ class NewsCubit extends Cubit<NewsStates> {
         query: {
           'country': 'eg',
           'category': 'science',
-          'apiKey': '0803a9972d064bd8b3b7379123ea164c',
+          'apiKey': apiKey,
         },
       ).then((value) {
         science = value.data['articles'];
         debugPrint(science[0]['title']);
         emit(NewsGetScienceSuccessState());
-      }).catchError((Error) {
-        debugPrint(Error.toString());
-        emit(NewsGetScienceErrorState(Error.toString()));
+      }).catchError((error) {
+        debugPrint(error.toString());
+        emit(NewsGetScienceErrorState(error.toString()));
       });
     } else {
       emit(NewsGetScienceSuccessState());
@@ -184,15 +185,15 @@ class NewsCubit extends Cubit<NewsStates> {
         query: {
           'country': 'eg',
           'category': 'technology',
-          'apiKey': '0803a9972d064bd8b3b7379123ea164c',
+          'apiKey': apiKey,
         },
       ).then((value) {
         technology = value.data['articles'];
         debugPrint(technology[0]['title']);
         emit(NewsGetTechnologySuccessState());
-      }).catchError((Error) {
-        debugPrint(Error.toString());
-        emit(NewsGetTechnologyErrorState(Error.toString()));
+      }).catchError((error) {
+        debugPrint(error.toString());
+        emit(NewsGetTechnologyErrorState(error.toString()));
       });
     } else {
       emit(NewsGetTechnologySuccessState());
@@ -209,15 +210,15 @@ class NewsCubit extends Cubit<NewsStates> {
         query: {
           'country': 'eg',
           'category': 'health',
-          'apiKey': '0803a9972d064bd8b3b7379123ea164c',
+          'apiKey': apiKey,
         },
       ).then((value) {
         health = value.data['articles'];
         debugPrint(health[0]['title']);
         emit(NewsGetHealthSuccessState());
-      }).catchError((Error) {
-        debugPrint(Error.toString());
-        emit(NewsGetHealthErrorState(Error.toString()));
+      }).catchError((error) {
+        debugPrint(error.toString());
+        emit(NewsGetHealthErrorState(error.toString()));
       });
     } else {
       emit(NewsGetHealthSuccessState());
@@ -234,22 +235,20 @@ class NewsCubit extends Cubit<NewsStates> {
         query: {
           'country': 'eg',
           'category': 'entertainment',
-          'apiKey': '0803a9972d064bd8b3b7379123ea164c',
+          'apiKey': apiKey,
         },
       ).then((value) {
         entertainment = value.data['articles'];
         debugPrint(entertainment[0]['title']);
         emit(NewsGetEntertainmentSuccessState());
-      }).catchError((Error) {
-        debugPrint(Error.toString());
-        emit(NewsGetEntertainmentErrorState(Error.toString()));
+      }).catchError((error) {
+        debugPrint(error.toString());
+        emit(NewsGetEntertainmentErrorState(error.toString()));
       });
     } else {
       emit(NewsGetEntertainmentSuccessState());
     }
   }
-
-
 
   List<dynamic> search = [];
 
@@ -259,11 +258,10 @@ class NewsCubit extends Cubit<NewsStates> {
     DioHelper.getData(
       url: 'v2/everything',
       query: {
-        'q': '$value',
-        'apiKey': '0803a9972d064bd8b3b7379123ea164c',
+        'q': value,
+        'apiKey': apiKey,
       },
     ).then((value) {
-      //debugPrint(value.data['articles'][0]['title']);
       search = value.data['articles'];
       debugPrint(search[0]['title']);
 
