@@ -1,4 +1,3 @@
-
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:conditional_builder_null_safety/conditional_builder_null_safety.dart';
 import 'package:flutter/material.dart';
@@ -111,7 +110,6 @@ Widget buildArticleItem(article, context) => InkWell(
         child: Row(
           children: [
             Container(
-
               width: 120.0,
               height: 120.0,
               decoration: BoxDecoration(
@@ -119,14 +117,18 @@ Widget buildArticleItem(article, context) => InkWell(
                   10.0,
                 ),
               ),
-              child:   CachedNetworkImage(
+              child: CachedNetworkImage(
                 imageUrl: '${article['urlToImage']}',
                 fit: BoxFit.fill,
                 height: 200,
                 width: double.infinity,
                 progressIndicatorBuilder: (context, url, downloadProgress) =>
-                const Center(child: CircularProgressIndicator()),
-                errorWidget: (context, url, error) => const Icon(Icons.error,color: Colors.grey,size: 60,),
+                    const Center(child: CircularProgressIndicator()),
+                errorWidget: (context, url, error) => const Icon(
+                  Icons.error,
+                  color: Colors.grey,
+                  size: 60,
+                ),
               ),
             ),
             const SizedBox(
@@ -173,15 +175,16 @@ Widget myDivider() => Padding(
     );
 
 Widget articleBuilder(list, context, {isSearch = false}) => ConditionalBuilder(
-      condition: list.length > 0,
+  condition: list.length > 0,
       builder: (context) => ListView.separated(
         physics: const BouncingScrollPhysics(),
         itemBuilder: (context, index) => buildArticleItem(list[index], context),
         itemCount: list.length,
         separatorBuilder: (context, index) => myDivider(),
       ),
-      fallback: (context) =>
-          isSearch ? Container() : const Center(child: CircularProgressIndicator()),
+      fallback: (context) => isSearch
+          ? Container()
+          : const Center(child: CircularProgressIndicator()),
     );
 
 void navigateTo(context, widget) => Navigator.push(
