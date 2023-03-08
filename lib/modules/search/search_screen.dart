@@ -1,14 +1,12 @@
-// ignore_for_file: use_key_in_widget_constructors, must_be_immutable, prefer_const_constructors
-
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:news/shared/components/componentes.dart';
+import 'package:news/shared/components/widgets.dart';
+import 'package:news/shared/cubit/cubit.dart';
 import 'package:news/shared/cubit/states.dart';
-import '../../shared/cubit/cubit.dart';
 
 class SearchScreen extends StatelessWidget {
-  var searchController = TextEditingController();
-
+  SearchScreen({super.key});
+  final searchController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return BlocConsumer<NewsCubit, NewsStates>(
@@ -34,7 +32,7 @@ class SearchScreen extends StatelessWidget {
                       }
                       return null;
                     },
-                    decoration: InputDecoration(
+                    decoration: const InputDecoration(
                       prefixIcon: Icon(
                         Icons.search,
                         color: Colors.grey,

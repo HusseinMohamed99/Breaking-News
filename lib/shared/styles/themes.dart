@@ -1,5 +1,3 @@
-// ignore_for_file: prefer_const_constructors
-
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:hexcolor/hexcolor.dart';
@@ -16,28 +14,28 @@ ThemeData darkTheme = ThemeData(
     ),
     backgroundColor: HexColor('#04043A'),
     elevation: 0.0,
-    titleTextStyle: TextStyle(
+    titleTextStyle: const TextStyle(
       color: Colors.white,
       fontSize: 20.0,
       fontWeight: FontWeight.bold,
     ),
-    actionsIconTheme: IconThemeData(
+    actionsIconTheme: const IconThemeData(
       color: Colors.white,
     ),
   ),
-  bottomNavigationBarTheme: BottomNavigationBarThemeData(
+  bottomNavigationBarTheme: const BottomNavigationBarThemeData(
     type: BottomNavigationBarType.fixed,
     selectedItemColor: defaultColor,
     unselectedItemColor: Colors.white,
     backgroundColor: Colors.black38,
     elevation: 25.0,
   ),
-  textTheme: TextTheme(
+  textTheme: const TextTheme(
       bodyText1: TextStyle(
     fontSize: 18.0,
     color: Colors.white,
   )),
-  iconTheme: IconThemeData(
+  iconTheme: const IconThemeData(
     color: Colors.black54,
   ),
   fontFamily: 'Jannah',
@@ -46,7 +44,7 @@ ThemeData darkTheme = ThemeData(
 ThemeData lightTheme = ThemeData(
   primarySwatch: defaultColor,
   scaffoldBackgroundColor: Colors.white,
-  appBarTheme: AppBarTheme(
+  appBarTheme: const AppBarTheme(
     titleSpacing: 20.0,
     systemOverlayStyle: SystemUiOverlayStyle(
       statusBarColor: Colors.white,
@@ -67,7 +65,7 @@ ThemeData lightTheme = ThemeData(
       color: Colors.black,
     ),
   ),
-  bottomNavigationBarTheme: BottomNavigationBarThemeData(
+  bottomNavigationBarTheme: const BottomNavigationBarThemeData(
     type: BottomNavigationBarType.fixed,
     selectedItemColor: defaultColor,
     backgroundColor: Colors.white,
@@ -76,7 +74,7 @@ ThemeData lightTheme = ThemeData(
       color: Colors.black54,
     ),
   ),
-  textTheme: TextTheme(
+  textTheme: const TextTheme(
       bodyText1: TextStyle(
     fontSize: 18.0,
     color: Colors.black,

@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import '../../shared/components/componentes.dart';
-import '../../shared/cubit/cubit.dart';
-import '../../shared/cubit/states.dart';
+import 'package:news/shared/components/widgets.dart';
+import 'package:news/shared/cubit/cubit.dart';
+import 'package:news/shared/cubit/states.dart';
+
 
 class TechnologyScreen extends StatelessWidget {
 

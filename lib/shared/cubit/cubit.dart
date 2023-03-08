@@ -77,7 +77,7 @@ class NewsCubit extends Cubit<NewsStates> {
     emit(NewsBottomNavState());
   }
 
-  static const String apiKey = '80d9b883bfba4836b95b0f77f41d5d07';
+  static const String apiKey = 'bac2e727513c4a49882b1e3c7aac6b5b';
 
   List<dynamic> general = [];
 

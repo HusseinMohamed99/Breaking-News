@@ -1,5 +1,3 @@
-// ignore_for_file: camel_case_types, use_key_in_widget_constructors, non_constant_identifier_names, unused_local_variable, prefer_const_constructors
-
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:news/layout/cubit/cubit.dart';
@@ -8,17 +6,18 @@ import 'package:news/shared/components/componentes.dart';
 import 'package:news/shared/cubit/cubit.dart';
 import '../../shared/cubit/states.dart';
 
-class News_Screen extends StatelessWidget {
+class NewsScreen extends StatelessWidget {
+  const NewsScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return BlocConsumer<NewsCubit, NewsStates>(
       listener: (context, state) => {},
       builder: (context, state) {
         var cubit = NewsCubit.get(context);
-        var Cubit = ModeCubit.get(context);
         return Scaffold(
           appBar: AppBar(
-            title: Text(
+            title: const Text(
               'News App',
             ),
             actions: [
@@ -26,19 +25,19 @@ class News_Screen extends StatelessWidget {
                 onPressed: () {
                   navigateTo(context, SearchScreen());
                 },
-                icon: Icon(
+                icon: const Icon(
                   Icons.search,
                   size: 30.0,
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 width: 30.0,
               ),
               IconButton(
                 onPressed: () {
                   ModeCubit.get(context).changeAppMode();
                 },
-                icon: Icon(
+                icon: const Icon(
                   Icons.brightness_4_outlined,
                   size: 30.0,
                 ),

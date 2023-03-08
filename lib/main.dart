@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -73,7 +72,7 @@ class MyApp extends StatelessWidget {
             home: SplashScreenView(
               duration: 3500,
               pageRouteTransition: PageRouteTransition.SlideTransition,
-              navigateRoute: News_Screen(),
+              navigateRoute: const NewsScreen(),
               text: 'Breaking News🗞️',
               textType: TextType.ColorizeAnimationText,
               textStyle: GoogleFonts.libreBaskerville(

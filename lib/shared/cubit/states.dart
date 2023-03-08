@@ -86,12 +86,3 @@ class NewsGetSearchErrorState extends NewsStates
   NewsGetSearchErrorState(this.error);
 
 }
-
-
-
-
-
-
-
-
-
