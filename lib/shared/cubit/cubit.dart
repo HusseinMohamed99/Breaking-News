@@ -87,7 +87,7 @@ class NewsCubit extends Cubit<NewsStates> {
       DioHelper.getData(
         url: 'v2/top-headlines',
         query: {
-          'country': 'eg',
+          'country': 'us',
           'category': 'general',
           'apiKey': apiKey,
         },
@@ -111,7 +111,7 @@ class NewsCubit extends Cubit<NewsStates> {
     DioHelper.getData(
       url: 'v2/top-headlines',
       query: {
-        'country': 'eg',
+        'country': 'us',
         'category': 'sports',
         'apiKey': apiKey,
       },
@@ -133,7 +133,7 @@ class NewsCubit extends Cubit<NewsStates> {
       DioHelper.getData(
         url: 'v2/top-headlines',
         query: {
-          'country': 'eg',
+          'country': 'us',
           'category': 'business',
           'apiKey': apiKey,
         },
@@ -158,7 +158,7 @@ class NewsCubit extends Cubit<NewsStates> {
       DioHelper.getData(
         url: 'v2/top-headlines',
         query: {
-          'country': 'eg',
+          'country': 'us',
           'category': 'science',
           'apiKey': apiKey,
         },
@@ -183,7 +183,7 @@ class NewsCubit extends Cubit<NewsStates> {
       DioHelper.getData(
         url: 'v2/top-headlines',
         query: {
-          'country': 'eg',
+          'country': 'us',
           'category': 'technology',
           'apiKey': apiKey,
         },
@@ -208,7 +208,7 @@ class NewsCubit extends Cubit<NewsStates> {
       DioHelper.getData(
         url: 'v2/top-headlines',
         query: {
-          'country': 'eg',
+          'country': 'us',
           'category': 'health',
           'apiKey': apiKey,
         },
@@ -233,7 +233,7 @@ class NewsCubit extends Cubit<NewsStates> {
       DioHelper.getData(
         url: 'v2/top-headlines',
         query: {
-          'country': 'eg',
+          'country': 'us',
           'category': 'entertainment',
           'apiKey': apiKey,
         },

@@ -26,6 +26,7 @@ dependencies:
   splash_screen_view: ^2.0.1
   google_fonts: ^2.3.3
   cached_network_image: ^3.2.3
+  url_launcher: ^6.1.10
 
 dev_dependencies:
   flutter_test:
