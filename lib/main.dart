@@ -66,9 +66,7 @@ class MyApp extends StatelessWidget {
             debugShowCheckedModeBanner: false,
             theme: lightTheme,
             darkTheme: darkTheme,
-            themeMode: ModeCubit.get(context).isDark
-                ? ThemeMode.dark
-                : ThemeMode.light,
+            themeMode:  ThemeMode.system,
             home: SplashScreenView(
               duration: 3500,
               pageRouteTransition: PageRouteTransition.SlideTransition,
@@ -88,8 +86,8 @@ class MyApp extends StatelessWidget {
                 const Color(0xff04043A),
               ],
               backgroundColor: ModeCubit.get(context).isDark
-                  ? const Color(0xff04043A)
-                  :  Colors.white
+                  ? Colors.white
+                  :  const Color(0xff04043A)
             ),
           );
         },
