@@ -1,7 +1,7 @@
 name: news
 description: A new Flutter project.
 
-publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+publish_to: 'none'
 
 version: 1.0.0+1
 
@@ -15,16 +15,16 @@ dependencies:
 
 
   cupertino_icons: ^1.0.4
-  intl: ^0.17.0
+  intl: ^0.18.1
   conditional_builder_null_safety: ^0.0.6
   bloc: ^8.0.3
   flutter_bloc: ^8.0.1
-  dio: ^4.0.6
-  hexcolor: ^2.0.7
+  dio: ^5.2.1+1
+  hexcolor: ^3.0.1
   shared_preferences: ^2.0.15
-  webview_flutter: ^3.0.4
-  splash_screen_view: ^2.0.1
-  google_fonts: ^2.3.3
+  webview_flutter: ^4.2.2
+  splash_screen_view: ^3.0.0
+  google_fonts: ^5.1.0
   cached_network_image: ^3.2.3
   url_launcher: ^6.1.10
 
@@ -37,7 +37,4 @@ dev_dependencies:
 
 flutter:
 
-
   uses-material-design: true
-
- # assets:
