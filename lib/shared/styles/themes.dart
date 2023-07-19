@@ -1,9 +1,9 @@
+import 'package:breaking_news/shared/enum/enum.dart';
+import 'package:breaking_news/shared/styles/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:news/shared/enum/enum.dart';
-import 'package:news/shared/styles/colors.dart';
 
 final getThemeData = {
   AppTheme.lightTheme: ThemeData(

@@ -1,11 +1,11 @@
+import 'package:breaking_news/modules/search/search_screen.dart';
+import 'package:breaking_news/shared/components/components.dart';
+import 'package:breaking_news/shared/cubit/cubit.dart';
+import 'package:breaking_news/shared/cubit/states.dart';
+import 'package:breaking_news/shared/styles/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:news/modules/search/search_screen.dart';
-import 'package:news/shared/components/components.dart';
-import 'package:news/shared/cubit/cubit.dart';
-import 'package:news/shared/cubit/states.dart';
-import 'package:news/shared/styles/colors.dart';
 
 class NewsScreen extends StatelessWidget {
   const NewsScreen({super.key});

@@ -1,15 +1,15 @@
+import 'package:breaking_news/bloc_observer.dart';
+import 'package:breaking_news/layout/news_app/news_layout.dart';
+import 'package:breaking_news/shared/cubit/cubit.dart';
+import 'package:breaking_news/shared/cubit/states.dart';
+import 'package:breaking_news/shared/enum/enum.dart';
+import 'package:breaking_news/shared/network/local/cache_helper.dart';
+import 'package:breaking_news/shared/network/remote/dio_helper.dart';
+import 'package:breaking_news/shared/styles/themes.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:news/bloc_observer.dart';
-import 'package:news/layout/news_app/news_layout.dart';
-import 'package:news/shared/cubit/cubit.dart';
-import 'package:news/shared/cubit/states.dart';
-import 'package:news/shared/enum/enum.dart';
-import 'package:news/shared/network/local/cache_helper.dart';
-import 'package:news/shared/network/remote/dio_helper.dart';
-import 'package:news/shared/styles/themes.dart';
 import 'package:wakelock/wakelock.dart';
 
 void main() async {

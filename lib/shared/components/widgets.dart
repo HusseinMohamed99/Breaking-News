@@ -1,7 +1,7 @@
+import 'package:breaking_news/shared/components/components.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:conditional_builder_null_safety/conditional_builder_null_safety.dart';
 import 'package:flutter/material.dart';
-import 'package:news/shared/components/components.dart';
 
 Widget articleBuilder(context, {required dynamic list, isSearch = false}) {
   return ConditionalBuilder(

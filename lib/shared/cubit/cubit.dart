@@ -1,15 +1,15 @@
+import 'package:breaking_news/modules/business/business_screen.dart';
+import 'package:breaking_news/modules/entertainment/entertainment_screen.dart';
+import 'package:breaking_news/modules/general/general_screen.dart';
+import 'package:breaking_news/modules/health/health_screen.dart';
+import 'package:breaking_news/modules/science/science_screen.dart';
+import 'package:breaking_news/modules/sports/sports_screen.dart';
+import 'package:breaking_news/modules/technology/technology_screen.dart';
+import 'package:breaking_news/shared/cubit/states.dart';
+import 'package:breaking_news/shared/network/local/cache_helper.dart';
+import 'package:breaking_news/shared/network/remote/dio_helper.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:news/modules/business/business_screen.dart';
-import 'package:news/modules/entertainment/entertainment_screen.dart';
-import 'package:news/modules/general/general_screen.dart';
-import 'package:news/modules/health/health_screen.dart';
-import 'package:news/modules/science/science_screen.dart';
-import 'package:news/modules/sports/sports_screen.dart';
-import 'package:news/modules/technology/technology_screen.dart';
-import 'package:news/shared/cubit/states.dart';
-import 'package:news/shared/network/local/cache_helper.dart';
-import 'package:news/shared/network/remote/dio_helper.dart';
 
 class NewsCubit extends Cubit<NewsStates> {
   NewsCubit() : super(NewsInitialState());
