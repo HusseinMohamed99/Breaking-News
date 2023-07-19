@@ -4,10 +4,8 @@ import 'package:news/shared/components/widgets.dart';
 import 'package:news/shared/cubit/cubit.dart';
 import 'package:news/shared/cubit/states.dart';
 
-
 class EntertainmentScreen extends StatelessWidget {
   const EntertainmentScreen({Key? key}) : super(key: key);
-
 
   @override
   Widget build(BuildContext context) {
@@ -16,7 +14,7 @@ class EntertainmentScreen extends StatelessWidget {
       builder: (context, state) {
         var list = NewsCubit.get(context).entertainment;
 
-        return articleBuilder(list, context);
+        return articleBuilder(list: list, context);
       },
     );
   }

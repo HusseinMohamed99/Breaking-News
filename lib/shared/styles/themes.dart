@@ -1,83 +1,160 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:hexcolor/hexcolor.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:news/shared/enum/enum.dart';
 import 'package:news/shared/styles/colors.dart';
 
-ThemeData darkTheme = ThemeData(
-  scaffoldBackgroundColor: HexColor('#04043A'),
-  primarySwatch: defaultColor,
-  appBarTheme: AppBarTheme(
-    titleSpacing: 20.0,
-    systemOverlayStyle: SystemUiOverlayStyle(
-      statusBarColor: HexColor('#04043A'),
-      statusBarIconBrightness: Brightness.light,
+final getThemeData = {
+  AppTheme.lightTheme: ThemeData(
+    scaffoldBackgroundColor: AppColorsLight.primaryColor,
+    primarySwatch: Colors.teal,
+    cardColor: AppMainColors.whiteColor,
+    appBarTheme: const AppBarTheme(
+      titleSpacing: 20.0,
+      systemOverlayStyle: SystemUiOverlayStyle(
+        statusBarColor: AppColorsLight.primaryColor,
+        statusBarBrightness: Brightness.light,
+        statusBarIconBrightness: Brightness.dark,
+      ),
+      backgroundColor: AppColorsLight.primaryColor,
+      elevation: 0.0,
+      titleTextStyle: TextStyle(
+        color: Colors.black,
+        fontSize: 20.0,
+        fontWeight: FontWeight.bold,
+      ),
+      iconTheme: IconThemeData(
+        color: Colors.black,
+      ),
+      actionsIconTheme: IconThemeData(
+        color: Colors.black,
+      ),
     ),
-    backgroundColor: HexColor('#04043A'),
-    elevation: 0.0,
-    titleTextStyle: const TextStyle(
-      color: Colors.white,
-      fontSize: 20.0,
-      fontWeight: FontWeight.bold,
+    bottomNavigationBarTheme: BottomNavigationBarThemeData(
+      type: BottomNavigationBarType.fixed,
+      selectedItemColor: AppColorsLight.tealColor,
+      backgroundColor: AppColorsLight.primaryColor,
+      elevation: 25.0,
+      showSelectedLabels: true,
+      showUnselectedLabels: false,
+      selectedIconTheme: IconThemeData(
+        size: 26.sp,
+        color: AppColorsLight.tealColor,
+      ),
+      unselectedIconTheme: IconThemeData(
+        size: 24.sp,
+        color: AppMainColors.greyColor,
+      ),
+      selectedLabelStyle: const TextStyle(
+        color: AppColorsLight.tealColor,
+      ),
+      unselectedLabelStyle: const TextStyle(
+        color: AppMainColors.greyColor,
+      ),
     ),
-    actionsIconTheme: const IconThemeData(
-      color: Colors.white,
+    textTheme: TextTheme(
+      titleLarge: GoogleFonts.roboto(
+          fontSize: 28.sp,
+          fontWeight: FontWeight.bold,
+          color: AppColorsLight.tealColor),
+      titleMedium: GoogleFonts.roboto(
+        fontSize: 24.sp,
+        fontWeight: FontWeight.bold,
+        color: AppColorsLight.tealColor,
+      ),
+      titleSmall: GoogleFonts.roboto(
+        fontSize: 16.sp,
+        fontWeight: FontWeight.bold,
+        color: AppMainColors.greyColor,
+      ),
+      bodyLarge: GoogleFonts.roboto(
+          fontSize: 26.sp,
+          fontWeight: FontWeight.bold,
+          color: AppColorsLight.tealColor),
+      bodyMedium: GoogleFonts.roboto(
+          fontSize: 20.sp,
+          fontWeight: FontWeight.bold,
+          color: AppColorsLight.tealColor),
+      bodySmall: GoogleFonts.roboto(
+          fontSize: 10.sp,
+          fontWeight: FontWeight.bold,
+          color: AppMainColors.greyColor),
     ),
   ),
-  bottomNavigationBarTheme: const BottomNavigationBarThemeData(
-    type: BottomNavigationBarType.fixed,
-    selectedItemColor: defaultColor,
-    unselectedItemColor: Colors.white,
-    backgroundColor: Colors.black38,
-    elevation: 25.0,
+  AppTheme.darkTheme: ThemeData(
+    scaffoldBackgroundColor: AppColorsDark.primaryDarkColor,
+    primarySwatch: Colors.blue,
+    cardColor: AppColorsDark.primaryDarkColor,
+    appBarTheme: AppBarTheme(
+      titleSpacing: 20.0,
+      systemOverlayStyle: const SystemUiOverlayStyle(
+        statusBarColor: AppColorsDark.primaryDarkColor,
+        statusBarIconBrightness: Brightness.light,
+      ),
+      backgroundColor: AppColorsDark.primaryDarkColor,
+      elevation: 0.0,
+      titleTextStyle: GoogleFonts.roboto(
+        color: Colors.white,
+        fontSize: 20.sp,
+        fontWeight: FontWeight.bold,
+      ),
+      actionsIconTheme: const IconThemeData(
+        color: AppMainColors.whiteColor,
+      ),
+    ),
+    bottomNavigationBarTheme: BottomNavigationBarThemeData(
+      type: BottomNavigationBarType.fixed,
+      selectedItemColor: AppMainColors.blueColor,
+      unselectedItemColor: AppMainColors.greyColor,
+      backgroundColor: AppColorsDark.primaryDarkColor,
+      elevation: 25.0,
+      showSelectedLabels: true,
+      showUnselectedLabels: false,
+      selectedIconTheme: IconThemeData(
+        size: 30.sp,
+        color: AppMainColors.blueColor,
+      ),
+      unselectedIconTheme: IconThemeData(
+        size: 24.sp,
+        color: AppMainColors.greyColor,
+      ),
+      selectedLabelStyle: const TextStyle(
+        color: AppMainColors.blueColor,
+      ),
+      unselectedLabelStyle: const TextStyle(
+        color: AppMainColors.greyColor,
+      ),
+    ),
+    textTheme: TextTheme(
+      titleLarge: GoogleFonts.roboto(
+        fontSize: 28.sp,
+        fontWeight: FontWeight.bold,
+        color: AppColorsDark.textColor,
+      ),
+      titleMedium: GoogleFonts.roboto(
+        fontSize: 24.sp,
+        fontWeight: FontWeight.bold,
+        color: AppColorsDark.textColor,
+      ),
+      titleSmall: GoogleFonts.roboto(
+        fontSize: 16.sp,
+        fontWeight: FontWeight.bold,
+        color: AppMainColors.greyColor,
+      ),
+      bodyLarge: GoogleFonts.roboto(
+        fontSize: 30.sp,
+        fontWeight: FontWeight.bold,
+        color: AppColorsDark.textColor,
+      ),
+      bodyMedium: GoogleFonts.roboto(
+          fontSize: 20.sp,
+          fontWeight: FontWeight.bold,
+          color: AppColorsDark.textColor),
+      bodySmall: GoogleFonts.roboto(
+          fontSize: 10.sp,
+          fontWeight: FontWeight.bold,
+          color: AppMainColors.greyColor),
+    ),
   ),
-  textTheme: const TextTheme(
-      bodyText1: TextStyle(
-    fontSize: 18.0,
-    color: Colors.white,
-  )),
-  iconTheme: const IconThemeData(
-    color: Colors.black54,
-  ),
-  fontFamily: 'Jannah',
-);
-
-ThemeData lightTheme = ThemeData(
-  primarySwatch: defaultColor,
-  scaffoldBackgroundColor: Colors.white,
-  appBarTheme: const AppBarTheme(
-    titleSpacing: 20.0,
-    systemOverlayStyle: SystemUiOverlayStyle(
-      statusBarColor: Colors.white,
-      statusBarBrightness: Brightness.light,
-      statusBarIconBrightness: Brightness.dark,
-    ),
-    backgroundColor: Colors.white,
-    elevation: 0.0,
-    titleTextStyle: TextStyle(
-      color: Colors.black,
-      fontSize: 20.0,
-      fontWeight: FontWeight.bold,
-    ),
-    iconTheme: IconThemeData(
-      color: Colors.black,
-    ),
-    actionsIconTheme: IconThemeData(
-      color: Colors.black,
-    ),
-  ),
-  bottomNavigationBarTheme: const BottomNavigationBarThemeData(
-    type: BottomNavigationBarType.fixed,
-    selectedItemColor: defaultColor,
-    backgroundColor: Colors.white,
-    elevation: 25.0,
-    unselectedIconTheme: IconThemeData(
-      color: Colors.black54,
-    ),
-  ),
-  textTheme: const TextTheme(
-      bodyText1: TextStyle(
-    fontSize: 18.0,
-    color: Colors.black,
-  )),
-  fontFamily: 'Jannah',
-);
+};

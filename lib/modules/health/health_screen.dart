@@ -5,7 +5,6 @@ import 'package:news/shared/cubit/cubit.dart';
 import 'package:news/shared/cubit/states.dart';
 
 class HealthScreen extends StatelessWidget {
-
   const HealthScreen({Key? key}) : super(key: key);
 
   @override
@@ -15,7 +14,7 @@ class HealthScreen extends StatelessWidget {
       builder: (context, state) {
         var list = NewsCubit.get(context).health;
 
-        return articleBuilder(list, context);
+        return articleBuilder(list: list, context);
       },
     );
   }

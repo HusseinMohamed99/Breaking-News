@@ -4,11 +4,12 @@ import 'package:news/modules/business/business_screen.dart';
 import 'package:news/modules/entertainment/entertainment_screen.dart';
 import 'package:news/modules/general/general_screen.dart';
 import 'package:news/modules/health/health_screen.dart';
+import 'package:news/modules/science/science_screen.dart';
 import 'package:news/modules/sports/sports_screen.dart';
 import 'package:news/modules/technology/technology_screen.dart';
 import 'package:news/shared/cubit/states.dart';
-import '../../modules/science/science_screen.dart';
-import '../network/remote/dio_helper.dart';
+import 'package:news/shared/network/local/cache_helper.dart';
+import 'package:news/shared/network/remote/dio_helper.dart';
 
 class NewsCubit extends Cubit<NewsStates> {
   NewsCubit() : super(NewsInitialState());
@@ -62,7 +63,6 @@ class NewsCubit extends Cubit<NewsStates> {
     const TechnologyScreen(),
     const HealthScreen(),
     const EntertainmentScreen(),
-
   ];
 
   void changeBottomNavBar(int index) {
@@ -270,5 +270,19 @@ class NewsCubit extends Cubit<NewsStates> {
       debugPrint(error.toString());
       emit(NewsGetSearchErrorState(error.toString()));
     });
+  }
+
+  bool isDark = false;
+
+  void changeAppMode({bool? fromShared}) {
+    if (fromShared != null) {
+      isDark = fromShared;
+      emit(AppChangeModeState());
+    } else {
+      isDark = !isDark;
+      CacheHelper.putBoolean(key: 'isDark', value: isDark).then((value) {
+        emit(AppChangeModeState());
+      });
+    }
   }
 }

@@ -7,14 +7,14 @@ import 'package:news/shared/cubit/states.dart';
 class GeneralScreen extends StatelessWidget {
   const GeneralScreen({Key? key}) : super(key: key);
 
-@override
+  @override
   Widget build(BuildContext context) {
     return BlocConsumer<NewsCubit, NewsStates>(
       listener: (context, state) {},
       builder: (context, state) {
         var list = NewsCubit.get(context).general;
 
-        return articleBuilder(list, context);
+        return articleBuilder(list: list, context);
       },
     );
   }

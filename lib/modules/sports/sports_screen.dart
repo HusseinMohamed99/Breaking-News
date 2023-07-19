@@ -19,9 +19,8 @@ class _SportsScreenState extends State<SportsScreen> {
       builder: (context, state) {
         var list = NewsCubit.get(context).sports;
 
-        return articleBuilder(list, context);
+        return articleBuilder(list: list, context);
       },
     );
   }
 }
-

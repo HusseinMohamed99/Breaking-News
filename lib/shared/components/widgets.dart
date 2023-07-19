@@ -1,24 +1,31 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:conditional_builder_null_safety/conditional_builder_null_safety.dart';
 import 'package:flutter/material.dart';
-import 'package:news/shared/components/componentes.dart';
+import 'package:news/shared/components/components.dart';
 
-Widget articleBuilder(list, context, {isSearch = false}) => ConditionalBuilder(
-      condition: list.length > 0,
-      builder: (context) => ListView.separated(
-        physics: const BouncingScrollPhysics(),
-        itemBuilder: (context, index) => buildArticleItem(list[index], context),
-        itemCount: list.length,
-        separatorBuilder: (context, index) => myDivider(),
-      ),
-      fallback: (context) => isSearch
-          ? Container()
-          : const Center(
-              child: CircularProgressIndicator(),
-            ),
-    );
+Widget articleBuilder(context, {required dynamic list, isSearch = false}) {
+  return ConditionalBuilder(
+    condition: list.isNotEmpty,
+    builder: (context) => ListView.separated(
+      physics: const BouncingScrollPhysics(),
+      itemBuilder: (context, index) => BuildArticleItem(article: list[index]),
+      itemCount: list.length,
+      separatorBuilder: (context, index) => myDivider(),
+    ),
+    fallback: (context) => isSearch
+        ? Container()
+        : const Center(
+            child: CircularProgressIndicator(),
+          ),
+  );
+}
 
-Widget buildArticleItem(article, context) => InkWell(
+class BuildArticleItem extends StatelessWidget {
+  const BuildArticleItem({super.key, this.article});
+  final dynamic article;
+  @override
+  Widget build(BuildContext context) {
+    return InkWell(
       onTap: () {
         launchURL(Uri.parse(article['url'] ?? ''));
       },
@@ -64,16 +71,14 @@ Widget buildArticleItem(article, context) => InkWell(
                     Expanded(
                       child: Text(
                         '${article['title']}',
+                        style: Theme.of(context).textTheme.bodyMedium,
                         maxLines: 3,
                         overflow: TextOverflow.ellipsis,
-                        style: Theme.of(context).textTheme.bodyText1,
                       ),
                     ),
                     Text(
                       '${article['publishedAt']}',
-                      style: const TextStyle(
-                        color: Colors.grey,
-                      ),
+                      style: Theme.of(context).textTheme.bodySmall,
                     ),
                   ],
                 ),
@@ -83,4 +88,5 @@ Widget buildArticleItem(article, context) => InkWell(
         ),
       ),
     );
-
+  }
+}

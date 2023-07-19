@@ -4,7 +4,6 @@ import 'package:news/shared/components/widgets.dart';
 import 'package:news/shared/cubit/cubit.dart';
 import 'package:news/shared/cubit/states.dart';
 
-
 class ScienceScreen extends StatelessWidget {
   const ScienceScreen({super.key});
 
@@ -15,7 +14,7 @@ class ScienceScreen extends StatelessWidget {
       builder: (context, state) {
         var list = NewsCubit.get(context).science;
 
-        return articleBuilder(list, context);
+        return articleBuilder(list: list, context);
       },
     );
   }

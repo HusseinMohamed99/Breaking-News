@@ -46,7 +46,7 @@ class SearchScreen extends StatelessWidget {
               ),
               Expanded(
                 child: articleBuilder(
-                  list,
+                  list: list,
                   context,
                   isSearch: true,
                 ),

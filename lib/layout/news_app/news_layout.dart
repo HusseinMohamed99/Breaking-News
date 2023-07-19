@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:news/layout/cubit/cubit.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:news/modules/search/search_screen.dart';
-import 'package:news/shared/components/componentes.dart';
+import 'package:news/shared/components/components.dart';
 import 'package:news/shared/cubit/cubit.dart';
-import '../../shared/cubit/states.dart';
+import 'package:news/shared/cubit/states.dart';
+import 'package:news/shared/styles/colors.dart';
 
 class NewsScreen extends StatelessWidget {
   const NewsScreen({super.key});
@@ -17,17 +18,21 @@ class NewsScreen extends StatelessWidget {
         var cubit = NewsCubit.get(context);
         return Scaffold(
           appBar: AppBar(
-            title: const Text(
+            title: Text(
               'News App',
+              style: Theme.of(context).textTheme.bodyMedium,
             ),
             actions: [
               IconButton(
                 onPressed: () {
                   navigateTo(context, SearchScreen());
                 },
-                icon: const Icon(
+                icon: Icon(
                   Icons.search,
-                  size: 30.0,
+                  size: 24.sp,
+                  color: cubit.isDark
+                      ? AppMainColors.whiteColor
+                      : AppMainColors.blueColor,
                 ),
               ),
               const SizedBox(
@@ -35,11 +40,14 @@ class NewsScreen extends StatelessWidget {
               ),
               IconButton(
                 onPressed: () {
-                  ModeCubit.get(context).changeAppMode();
+                  NewsCubit.get(context).changeAppMode();
                 },
-                icon: const Icon(
+                icon: Icon(
                   Icons.brightness_4_outlined,
-                  size: 30.0,
+                  size: 24.sp,
+                  color: cubit.isDark
+                      ? AppMainColors.whiteColor
+                      : AppMainColors.blueColor,
                 ),
               ),
             ],
