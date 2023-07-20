@@ -21,7 +21,6 @@ dependencies:
   flutter_bloc: ^8.0.1
   dio: ^5.2.1+1
   shared_preferences: ^2.0.15
-  webview_flutter: ^4.2.2
   google_fonts: ^5.1.0
   cached_network_image: ^3.2.3
   url_launcher: ^6.1.10
