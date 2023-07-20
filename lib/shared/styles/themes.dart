@@ -33,21 +33,21 @@ final getThemeData = {
     ),
     bottomNavigationBarTheme: BottomNavigationBarThemeData(
       type: BottomNavigationBarType.fixed,
-      selectedItemColor: AppColorsLight.tealColor,
+      selectedItemColor: AppColorsLight.secondaryColor,
       backgroundColor: AppColorsLight.primaryColor,
       elevation: 25.0,
       showSelectedLabels: true,
       showUnselectedLabels: false,
       selectedIconTheme: IconThemeData(
-        size: 26.sp,
-        color: AppColorsLight.tealColor,
+        size: 30.sp,
+        color: AppColorsLight.secondaryColor,
       ),
       unselectedIconTheme: IconThemeData(
         size: 24.sp,
         color: AppMainColors.greyColor,
       ),
       selectedLabelStyle: const TextStyle(
-        color: AppColorsLight.tealColor,
+        color: AppColorsLight.secondaryColor,
       ),
       unselectedLabelStyle: const TextStyle(
         color: AppMainColors.greyColor,
@@ -55,13 +55,14 @@ final getThemeData = {
     ),
     textTheme: TextTheme(
       titleLarge: GoogleFonts.roboto(
-          fontSize: 28.sp,
-          fontWeight: FontWeight.bold,
-          color: AppColorsLight.tealColor),
+        fontSize: 28.sp,
+        fontWeight: FontWeight.bold,
+        color: AppColorsLight.blackColor,
+      ),
       titleMedium: GoogleFonts.roboto(
         fontSize: 24.sp,
         fontWeight: FontWeight.bold,
-        color: AppColorsLight.tealColor,
+        color: AppColorsLight.blackColor,
       ),
       titleSmall: GoogleFonts.roboto(
         fontSize: 16.sp,
@@ -69,13 +70,15 @@ final getThemeData = {
         color: AppMainColors.greyColor,
       ),
       bodyLarge: GoogleFonts.roboto(
-          fontSize: 26.sp,
-          fontWeight: FontWeight.bold,
-          color: AppColorsLight.tealColor),
+        fontSize: 26.sp,
+        fontWeight: FontWeight.bold,
+        color: AppColorsLight.blackColor,
+      ),
       bodyMedium: GoogleFonts.roboto(
-          fontSize: 20.sp,
-          fontWeight: FontWeight.bold,
-          color: AppColorsLight.tealColor),
+        fontSize: 20.sp,
+        fontWeight: FontWeight.bold,
+        color: AppColorsLight.blackColor,
+      ),
       bodySmall: GoogleFonts.roboto(
           fontSize: 10.sp,
           fontWeight: FontWeight.bold,

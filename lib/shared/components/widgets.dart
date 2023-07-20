@@ -1,7 +1,9 @@
-import 'package:breaking_news/shared/components/components.dart';
-import 'package:cached_network_image/cached_network_image.dart';
+import 'package:breaking_news/shared/components/divider.dart';
+import 'package:breaking_news/shared/components/image_shimmer.dart';
+import 'package:breaking_news/shared/components/launcher.dart';
 import 'package:conditional_builder_null_safety/conditional_builder_null_safety.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 Widget articleBuilder(context, {required dynamic list, isSearch = false}) {
   return ConditionalBuilder(
@@ -10,7 +12,7 @@ Widget articleBuilder(context, {required dynamic list, isSearch = false}) {
       physics: const BouncingScrollPhysics(),
       itemBuilder: (context, index) => BuildArticleItem(article: list[index]),
       itemCount: list.length,
-      separatorBuilder: (context, index) => myDivider(),
+      separatorBuilder: (context, index) => const MyDivider(),
     ),
     fallback: (context) => isSearch
         ? Container()
@@ -29,40 +31,30 @@ class BuildArticleItem extends StatelessWidget {
       onTap: () {
         launchURL(Uri.parse(article['url'] ?? ''));
       },
-      child: Padding(
-        padding: const EdgeInsets.all(20.0),
+      child: Card(
+        margin: const EdgeInsets.all(10).r,
+        elevation: 5,
         child: Row(
           children: [
             Container(
-              width: 120.0,
-              height: 120.0,
+              width: 120.w,
+              height: 120.h,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(
-                  10.0,
-                ),
+                  10,
+                ).r,
               ),
-              child: CachedNetworkImage(
+              child: ImageWithShimmer(
+                boxFit: BoxFit.fill,
                 imageUrl: '${article['urlToImage']}',
-                fit: BoxFit.fill,
-                height: 200,
                 width: double.infinity,
-                progressIndicatorBuilder: (context, url, downloadProgress) =>
-                    const Center(
-                  child: CircularProgressIndicator(),
-                ),
-                errorWidget: (context, url, error) => const Icon(
-                  Icons.error,
-                  color: Colors.grey,
-                  size: 60,
-                ),
+                height: 200.h,
               ),
             ),
-            const SizedBox(
-              width: 20.0,
-            ),
+            SizedBox(width: 20.w),
             Expanded(
               child: SizedBox(
-                height: 120.0,
+                height: 80.h,
                 child: Column(
                   mainAxisSize: MainAxisSize.min,
                   crossAxisAlignment: CrossAxisAlignment.start,

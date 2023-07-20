@@ -1,5 +1,5 @@
 import 'package:breaking_news/modules/search/search_screen.dart';
-import 'package:breaking_news/shared/components/components.dart';
+import 'package:breaking_news/shared/components/navigator.dart';
 import 'package:breaking_news/shared/cubit/cubit.dart';
 import 'package:breaking_news/shared/cubit/states.dart';
 import 'package:breaking_news/shared/styles/colors.dart';
@@ -31,7 +31,7 @@ class NewsScreen extends StatelessWidget {
                   Icons.search,
                   size: 24.sp,
                   color: cubit.isDark
-                      ? AppMainColors.whiteColor
+                      ? AppColorsLight.secondaryColor
                       : AppMainColors.blueColor,
                 ),
               ),
@@ -46,7 +46,7 @@ class NewsScreen extends StatelessWidget {
                   Icons.brightness_4_outlined,
                   size: 24.sp,
                   color: cubit.isDark
-                      ? AppMainColors.whiteColor
+                      ? AppColorsLight.secondaryColor
                       : AppMainColors.blueColor,
                 ),
               ),
