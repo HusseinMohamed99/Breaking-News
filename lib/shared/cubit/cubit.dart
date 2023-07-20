@@ -17,38 +17,53 @@ class NewsCubit extends Cubit<NewsStates> {
   static NewsCubit get(context) => BlocProvider.of(context);
 
   int currentIndex = 0;
+  List<String> title = [
+    'General',
+    'Sports',
+    'Business',
+    'Science',
+    'Technology',
+    'Health',
+    'Entertainment',
+  ];
 
   List<BottomNavigationBarItem> bottomItems = [
     const BottomNavigationBarItem(
-        icon: Icon(
-          Icons.home_outlined,
-        ),
-        label: 'General'),
+      icon: Icon(
+        Icons.home_outlined,
+      ),
+      label: 'General',
+    ),
     const BottomNavigationBarItem(
-        icon: Icon(
-          Icons.sports_basketball_sharp,
-        ),
-        label: 'Sports'),
+      icon: Icon(
+        Icons.sports_basketball_sharp,
+      ),
+      label: 'Sports',
+    ),
     const BottomNavigationBarItem(
-        icon: Icon(
-          Icons.business,
-        ),
-        label: 'Business'),
+      icon: Icon(
+        Icons.business,
+      ),
+      label: 'Business',
+    ),
     const BottomNavigationBarItem(
-        icon: Icon(
-          Icons.science_outlined,
-        ),
-        label: 'Science'),
+      icon: Icon(
+        Icons.science_outlined,
+      ),
+      label: 'Science',
+    ),
     const BottomNavigationBarItem(
-        icon: Icon(
-          Icons.laptop,
-        ),
-        label: 'Technology'),
+      icon: Icon(
+        Icons.laptop,
+      ),
+      label: 'Technology',
+    ),
     const BottomNavigationBarItem(
-        icon: Icon(
-          Icons.health_and_safety_outlined,
-        ),
-        label: 'Health'),
+      icon: Icon(
+        Icons.health_and_safety_outlined,
+      ),
+      label: 'Health',
+    ),
     const BottomNavigationBarItem(
         icon: Icon(
           Icons.games_outlined,

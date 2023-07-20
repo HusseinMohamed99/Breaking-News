@@ -1,24 +1,44 @@
 import 'package:breaking_news/shared/components/divider.dart';
 import 'package:breaking_news/shared/components/image_shimmer.dart';
 import 'package:breaking_news/shared/components/launcher.dart';
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:conditional_builder_null_safety/conditional_builder_null_safety.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 Widget articleBuilder(context, {required dynamic list, isSearch = false}) {
-  return ConditionalBuilder(
-    condition: list.isNotEmpty,
-    builder: (context) => ListView.separated(
-      physics: const BouncingScrollPhysics(),
-      itemBuilder: (context, index) => BuildArticleItem(article: list[index]),
-      itemCount: list.length,
-      separatorBuilder: (context, index) => const MyDivider(),
-    ),
-    fallback: (context) => isSearch
-        ? Container()
-        : const Center(
-            child: CircularProgressIndicator(),
+  return Column(
+    children: [
+      CarouselSlider.builder(
+        options: CarouselOptions(
+          autoPlay: true,
+        ),
+        itemCount: list.length,
+        itemBuilder: (BuildContext context, int itemIndex, int pageViewIndex) {
+          return CarouselSliderItem(article: list[itemIndex]);
+        },
+      ),
+      SizedBox(
+        height: 10.h,
+      ),
+      Expanded(
+        child: ConditionalBuilder(
+          condition: list.isNotEmpty,
+          builder: (context) => ListView.separated(
+            physics: const BouncingScrollPhysics(),
+            itemBuilder: (context, index) =>
+                BuildArticleItem(article: list[index]),
+            itemCount: list.length,
+            separatorBuilder: (context, index) => const MyDivider(),
           ),
+          fallback: (context) => isSearch
+              ? Container()
+              : const Center(
+                  child: CircularProgressIndicator(),
+                ),
+        ),
+      ),
+    ],
   );
 }
 
@@ -78,6 +98,25 @@ class BuildArticleItem extends StatelessWidget {
             ),
           ],
         ),
+      ),
+    );
+  }
+}
+
+class CarouselSliderItem extends StatelessWidget {
+  const CarouselSliderItem({super.key, this.article});
+  final dynamic article;
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: const EdgeInsets.symmetric(horizontal: 8.0).r,
+      width: double.infinity,
+      height: 300,
+      child: ImageWithShimmer(
+        boxFit: BoxFit.fill,
+        imageUrl: '${article['urlToImage']}',
+        width: double.infinity,
+        height: 200.h,
       ),
     );
   }

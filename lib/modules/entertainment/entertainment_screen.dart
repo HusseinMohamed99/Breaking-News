@@ -14,7 +14,10 @@ class EntertainmentScreen extends StatelessWidget {
       builder: (context, state) {
         var list = NewsCubit.get(context).entertainment;
 
-        return articleBuilder(list: list, context);
+        return articleBuilder(
+          list: list,
+          context,
+        );
       },
     );
   }

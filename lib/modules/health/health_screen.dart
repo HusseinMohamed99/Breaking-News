@@ -14,7 +14,10 @@ class HealthScreen extends StatelessWidget {
       builder: (context, state) {
         var list = NewsCubit.get(context).health;
 
-        return articleBuilder(list: list, context);
+        return articleBuilder(
+          list: list,
+          context,
+        );
       },
     );
   }

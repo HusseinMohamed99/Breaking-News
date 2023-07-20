@@ -19,7 +19,9 @@ class NewsScreen extends StatelessWidget {
         return Scaffold(
           appBar: AppBar(
             title: Text(
-              'News App',
+              cubit.currentIndex == 0
+                  ? 'Breaking News'
+                  : cubit.title[cubit.currentIndex],
               style: Theme.of(context).textTheme.bodyMedium,
             ),
             actions: [

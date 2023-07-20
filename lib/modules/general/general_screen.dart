@@ -14,7 +14,10 @@ class GeneralScreen extends StatelessWidget {
       builder: (context, state) {
         var list = NewsCubit.get(context).general;
 
-        return articleBuilder(list: list, context);
+        return articleBuilder(
+          list: list,
+          context,
+        );
       },
     );
   }
