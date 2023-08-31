@@ -1,6 +1,6 @@
 # news
 ## Download The App![GitHub All Releases](https://img.shields.io/github/downloads/HusseinMohamed99/Breaking-News/total?color=green)
-<a href="https://github.com/HusseinMohamed99/Socialite/releases/download/v2.0.0/Socialite.apk"><img src="https://playerzon.com/asset/download.png" width="200"></img></a>
+<a href="https://github.com/HusseinMohamed99/Breaking-News/releases/download/v0.1.0/Breaking.News.apk"><img src="https://playerzon.com/asset/download.png" width="200"></img></a>
 
 
 
