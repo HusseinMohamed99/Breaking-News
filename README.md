@@ -2,6 +2,8 @@
 
 ## Download The App![GitHub All Releases](https://img.shields.io/github/downloads/HusseinMohamed99/Breaking-News/total?color=green)
 <a href="https://github.com/HusseinMohamed99/Breaking-News/releases/download/v0.1.0/Breaking.News.apk"><img src="https://playerzon.com/asset/download.png" width="200"></img></a>
+
+
 Developed a news app that connects to APIs to show users all news based on the category, such as sports, business, and science.
 Implemented a dark mode option to allow users to change the appearance of the app.
 Used APIs to fetch data from news sources, such as BBC, CNN, and The New York Times.
